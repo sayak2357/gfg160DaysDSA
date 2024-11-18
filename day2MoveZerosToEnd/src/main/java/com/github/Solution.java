@@ -3,6 +3,7 @@ package com.github;
 public class Solution {
     void pushZerosToEnd(int[] arr) {
         int n = arr.length,count=0;
+        //swap non-zero with last zero
         for(int i=0;i<n;i++){
             if(arr[i]!=0){
                 swap(arr,i,count);
