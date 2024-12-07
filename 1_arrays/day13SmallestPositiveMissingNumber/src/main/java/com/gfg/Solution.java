@@ -6,6 +6,7 @@ public class Solution {
         int n = arr.length;
         int res = n+1;
         int i = 0;
+        // ensure x is positioned at arr[x-1]
         while(i<n){
             int num = arr[i];
             while(num>0 && num<=n && num!=arr[num-1]){
