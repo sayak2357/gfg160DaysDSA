@@ -4,19 +4,16 @@ import java.util.*;
 
 public class Solution {
     public ArrayList<Integer> intersectionWithDuplicates(int[] a, int[] b) {
-        Set<Integer> res = new HashSet<>();
-        Map<Integer, Boolean> bMap = new HashMap<>();
+        ArrayList<Integer> res = new ArrayList<>();
+        Set<Integer> bSet = new HashSet<>();
         for(int num:b)
-            bMap.put(num,true);
+            bSet.add(num);
         for(int num:a){
-            if(bMap.containsKey(num)){
+            if(bSet.contains(num)){
                 res.add(num);
+                bSet.remove(num);
             }
         }
-        ArrayList<Integer> finalRes = new ArrayList<>();
-        for(int num:res)
-            finalRes.add(num);
-
-        return finalRes;
+        return res;
     }
 }
