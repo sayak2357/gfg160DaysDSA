@@ -18,4 +18,24 @@ public class Solution {
         }
         return waterTrapped;
     }
+
+    public int maxWaterOptimised(int arr[]) {
+        int n = arr.length;
+        int left = 1, right = n-2;
+        int lMax = arr[left-1], rMax = arr[right+1];
+        int waterTrapped = 0;
+        while(left<=right){
+            if(rMax<=lMax){
+                waterTrapped += Math.max(0,rMax-arr[right]);
+                rMax = Math.max(rMax,arr[right]);
+                right--;
+            }
+            else{
+                waterTrapped += Math.max(0, lMax-arr[left]);
+                lMax = Math.max(lMax, arr[left]);
+                left++;
+            }
+        }
+        return waterTrapped;
+    }
 }
