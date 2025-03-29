@@ -13,7 +13,7 @@ public class Solution {
                 currReach = maxReach;
             }
         }
-        return maxReach>=(n-1) && currReach>=(n-1)?jumps:-1;
+        return currReach>=(n-1)?jumps:-1;
     }
 
 }
